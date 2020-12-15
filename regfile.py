@@ -9,7 +9,8 @@ regfile = open('SYSTEM','rb')
 base_block = regfile.read(4096)
 
 if base_block[0:4].decode('utf-8') != 'regf':
-	die('Wrong magic number')
+	print('Wrong magic number')
+	quit()
 
 #Array with elements that contains [field_name, offset, length]
 field_array = [['Primary sequence number',4,4], ['Secondary sequence number',8,4], ['Last written timestamp',12,8], 
